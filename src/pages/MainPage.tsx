@@ -188,8 +188,8 @@ export default function MainPage() {
                 absolute 
                 bottom-10 
                 left-1/3 
-                -translate-x-10
-                h-40 
+                -translate-x-7
+                h-75
                 w-auto 
                 z-20
               "
@@ -197,13 +197,13 @@ export default function MainPage() {
             <img
               src={guyTwo}
               className="
-                absolute
-                bottom-16
-                left-1/2
-                -translate-x-14
-                h-44
-                w-auto
-                z-10
+                absolute 
+                bottom-10 
+                left-1/3 
+                translate-x-40
+                h-75
+                w-auto 
+                z-20
               "
             />
 
