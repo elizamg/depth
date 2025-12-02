@@ -2,6 +2,7 @@ import baseCanvas from "../assets/baseImage.png"
 import zoomedCanvas from "../assets/zoomedOut.jpeg"
 import guyOne from "../assets/guy1.png"
 import guyTwo from "../assets/guy2.png"
+import guyOneColor from "../assets/guy1color.png"
 
 import { useState } from "react"
 
@@ -69,7 +70,7 @@ export default function MainPage() {
             </button>
           </div>
           <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Distance</span>
+            <span className="text-sm text-white">Verticle Positioning</span>
             <button
             onClick={() => toggleKnob("distance")}
             >
@@ -181,18 +182,28 @@ export default function MainPage() {
         </div>
         {/* canvas */}
         <div className="relative p-6 min-h-[300px]">
+          {knobs.shadow && (
+            <div
+                className={
+                  "absolute w-32 bg-black/50 rounded-full blur-xl z-0 left-1/3 " +
+                  (knobs.overlap ? "translate-x-20 " : "-translate-x-7 ") +
+                  (knobs.distance ? "bottom-30 "  : "bottom-10 ") +
+                  (knobs.size ? "h-[20px] "  : "h-[30px] ")
+                }
+             >
+            </div>
+          )}
             <img src ={canvas} className="w-full h-auto"/>
             <img
-              src={guyOne}
-              className="
-                absolute 
-                bottom-10 
-                left-1/3 
-                -translate-x-7
-                h-75
-                w-auto 
-                z-20
-              "
+              src={knobs.color ? guyOneColor : guyOne}
+              className= {
+                "absolute left-1/3 w-auto z-20 " +
+                (knobs.size ? "h-65 " : "h-75 ") +
+                (knobs.overlap ? "translate-x-20 "  : "-translate-x-7 ") +
+                (knobs.distance ? "bottom-30 "  : "bottom-10 ")
+                
+
+              }
             />
             <img
               src={guyTwo}
