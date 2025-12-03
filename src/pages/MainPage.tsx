@@ -42,20 +42,20 @@ export default function MainPage() {
 
   return (
     <main 
-      className="min-h-screen w-full bg-slate-800" 
+      className="min-h-screen w-full bg-[#E8DDBF]" 
     >
       <div className="max-w-5xl mx-auto py-8 flex-col gap-8">
         {/* toggles row */}
         <div className="flex flex-row gap-6 justify-center text-white">
           <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Size</span>
+            <span className="text-sm text-stone-900">Size</span>
             <button
             onClick={() => toggleKnob("size")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.size ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.size ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -70,14 +70,14 @@ export default function MainPage() {
             </button>
           </div>
           <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Verticle Positioning</span>
+            <span className="text-sm text-stone-900">Verticle Positioning</span>
             <button
             onClick={() => toggleKnob("distance")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.distance ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.distance ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -92,14 +92,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Color</span>
+            <span className="text-sm text-stone-900">Color</span>
             <button
             onClick={() => toggleKnob("color")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.color ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.color ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -114,14 +114,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Shadow</span>
+            <span className="text-sm text-stone-900">Shadow</span>
             <button
             onClick={() => toggleKnob("shadow")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.shadow ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.shadow ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -136,14 +136,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Vanishing Point</span>
+            <span className="text-sm text-stone-900">Vanishing Point</span>
             <button
             onClick={() => toggleKnob("vanishingPoint")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.vanishingPoint ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.vanishingPoint ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -158,14 +158,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Overlap</span>
+            <span className="text-sm text-stone-900">Overlap</span>
             <button
             onClick={() => toggleKnob("overlap")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.overlap ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.overlap ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
