@@ -2,6 +2,7 @@ import baseCanvas from "../assets/baseImage.png"
 import zoomedCanvas from "../assets/zoomedOut.jpeg"
 import guyOne from "../assets/guy1.png"
 import guyTwo from "../assets/guy2.png"
+import guyOneColor from "../assets/guy1color.png"
 
 import { useState } from "react"
 
@@ -41,20 +42,20 @@ export default function MainPage() {
 
   return (
     <main 
-      className="min-h-screen w-full bg-slate-800" 
+      className="min-h-screen w-full bg-[#E8DDBF]" 
     >
       <div className="max-w-5xl mx-auto py-8 flex-col gap-8">
         {/* toggles row */}
         <div className="flex flex-row gap-6 justify-center text-white">
           <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Size</span>
+            <span className="text-sm text-stone-900">Size</span>
             <button
             onClick={() => toggleKnob("size")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.size ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.size ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -69,14 +70,14 @@ export default function MainPage() {
             </button>
           </div>
           <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Distance</span>
+            <span className="text-sm text-stone-900">Verticle Positioning</span>
             <button
             onClick={() => toggleKnob("distance")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.distance ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.distance ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -91,14 +92,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Color</span>
+            <span className="text-sm text-stone-900">Color</span>
             <button
             onClick={() => toggleKnob("color")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.color ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.color ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -113,14 +114,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Shadow</span>
+            <span className="text-sm text-stone-900">Shadow</span>
             <button
             onClick={() => toggleKnob("shadow")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.shadow ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.shadow ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -135,14 +136,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Vanishing Point</span>
+            <span className="text-sm text-stone-900">Vanishing Point</span>
             <button
             onClick={() => toggleKnob("vanishingPoint")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.vanishingPoint ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.vanishingPoint ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -157,14 +158,14 @@ export default function MainPage() {
             </button>
           </div>
                     <div className="flex flex-col items-center gap-1 text-white">
-            <span className="text-sm text-white">Overlap</span>
+            <span className="text-sm text-stone-900">Overlap</span>
             <button
             onClick={() => toggleKnob("overlap")}
             >
               <div 
                 className={
                   "w-12 h-7 rounded-full flex items-center px-1 transition-colors " + 
-                  (knobs.overlap ? "bg-emerald-500" : "bg-slate-600")
+                  (knobs.overlap ? "bg-amber-600" : "bg-slate-400")
                 }
 
               >
@@ -181,29 +182,39 @@ export default function MainPage() {
         </div>
         {/* canvas */}
         <div className="relative p-6 min-h-[300px]">
+          {knobs.shadow && (
+            <div
+                className={
+                  "absolute w-32 bg-black/50 rounded-full blur-xl z-0 left-1/3 " +
+                  (knobs.overlap ? "translate-x-20 " : "-translate-x-7 ") +
+                  (knobs.distance ? "bottom-30 "  : "bottom-10 ") +
+                  (knobs.size ? "h-[20px] "  : "h-[30px] ")
+                }
+             >
+            </div>
+          )}
             <img src ={canvas} className="w-full h-auto"/>
             <img
-              src={guyOne}
-              className="
-                absolute 
-                bottom-10 
-                left-1/3 
-                -translate-x-10
-                h-40 
-                w-auto 
-                z-20
-              "
+              src={knobs.color ? guyOneColor : guyOne}
+              className= {
+                "absolute left-1/3 w-auto z-20 " +
+                (knobs.size ? "h-65 " : "h-75 ") +
+                (knobs.overlap ? "translate-x-20 "  : "-translate-x-7 ") +
+                (knobs.distance ? "bottom-30 "  : "bottom-10 ")
+                
+
+              }
             />
             <img
               src={guyTwo}
               className="
-                absolute
-                bottom-16
-                left-1/2
-                -translate-x-14
-                h-44
-                w-auto
-                z-10
+                absolute 
+                bottom-10 
+                left-1/3 
+                translate-x-40
+                h-75
+                w-auto 
+                z-20
               "
             />
 
